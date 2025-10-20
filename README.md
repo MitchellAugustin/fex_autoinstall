@@ -1,4 +1,4 @@
-# Automated installer for FEX
+# Automated installer for Steam & FEX on arm64
 
 This does the following:
 - Installs FEX PPA and dependencies
@@ -10,7 +10,7 @@ This does the following:
 - Patches the Steam launcher to launch with FEXBash on arm64
 
 Note:
-- This is third-party software for experimental use. It is not supported by Canonical. Use at your own risk.
+- This is third-party software for experimental use. It is not supported by Canonical, Valve, NVIDIA, or the FEX developers. Use at your own risk.
 - Your x86 RootFS will not receive automatic updates.
 
 Before using this script:
