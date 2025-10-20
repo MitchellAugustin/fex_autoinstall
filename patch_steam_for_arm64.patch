@@ -1,0 +1,20 @@
+--- bin_steam.sh	2025-10-19 14:20:57.256142632 -0500
++++ /usr/lib/steam/bin_steam.sh	2025-10-20 16:26:42.354007387 -0500
+@@ -11,6 +11,16 @@
+ 
+ set -e
+ 
++ARCH=$(arch)
++
++if [[ "$ARCH" == "aarch64" ]]; then
++  echo "System architecture is aarch64 (ARM64). Launching with FEXBash"
++  FEXBash $0 "$@"
++  exit
++else
++  echo "System architecture is not aarch64. It is: $ARCH"
++fi
++
+ # Get the full name of this script
+ STEAMSCRIPT="$(cd "${0%/*}" && echo "$PWD")/${0##*/}"
+ export STEAMSCRIPT
+
