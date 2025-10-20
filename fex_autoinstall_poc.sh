@@ -1,17 +1,17 @@
-# wget https://mitchellaugustin.com/files/fex_autoinstall_poc.sh && bash fex_autoinstall_poc.sh
+# wget https://raw.githubusercontent.com/MitchellAugustin/fex_autoinstall/refs/heads/main/fex_autoinstall_poc.sh && bash fex_autoinstall_poc.sh
 SWD=$(pwd)
 sudo add-apt-repository -y ppa:fex-emu/fex
 sudo apt update
 sudo apt install -y fex-emu-armv8.4 fex-emu-wine patchelf
 wget https://repo.steampowered.com/steam/archive/stable/steam-launcher_latest_all.deb
-wget https://mitchellaugustin.com/files/patch_steam_for_arm64.patch
+wget https://raw.githubusercontent.com/MitchellAugustin/fex_autoinstall/refs/heads/main/patch_steam_for_arm64.patch
 sudo apt install ./steam-launcher_latest_all.deb
 FEXRootFSFetcher -y -a
 cd $HOME/.fex-emu/RootFS
 unsquashfs -f -d NewRootFS/ Ubuntu_24_04.sqsh
 cd NewRootFS
 rm ubuntu_rootfs_update.py
-wget https://mitchellaugustin.com/files/ubuntu_rootfs_update.py
+wget https://raw.githubusercontent.com/MitchellAugustin/fex_autoinstall/refs/heads/main/ubuntu_rootfs_update.py
 chmod +x ubuntu_rootfs_update.py
 ./ubuntu_rootfs_update.py chroot
 echo "PWD: " $(pwd)
