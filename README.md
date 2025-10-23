@@ -15,4 +15,4 @@ Before using this script:
 - Ensure that your host's graphics drivers are up-to-date
 
 How to use:
-`cd ~ && wget https://raw.githubusercontent.com/MitchellAugustin/fex_autoinstall/refs/heads/main/fex_autoinstall_poc.sh && bash fex_autoinstall_poc.sh`
+`wget https://raw.githubusercontent.com/MitchellAugustin/fex_autoinstall/refs/heads/main/fex_autoinstall_poc.sh && bash fex_autoinstall_poc.sh`
