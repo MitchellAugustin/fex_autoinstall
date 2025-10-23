@@ -54,6 +54,19 @@ profile FEXBash /usr/bin/FEXBash flags=(unconfined) {
 }
 " > FEXBash_apparmor.txt
 
+echo "abi <abi/4.0>,
+include <tunables/global>
+ 
+profile steam /usr/bin/steam flags=(unconfined) {
+  userns,
+ 
+  # Site-specific additions and overrides. See local/README for details.
+  include if exists <local/steam>
+}
+" > steam_apparmor.txt
+
+
+sudo mv steam_apparmor.txt /etc/apparmor.d/steam
 sudo mv FEXBash_apparmor.txt /etc/apparmor.d/FEXBash
 sudo apparmor_parser -Tr /etc/apparmor.d/steam
 sudo apparmor_parser -Tr /etc/apparmor.d/FEXBash
