@@ -3,9 +3,7 @@
 This does the following:
 - Installs FEX PPA and dependencies
 - Downloads and installs steam deb
-- Downloads a stock Ubuntu 24.04 RootFS via FEXRootFSFetcher
-- Unsquashes the downloaded rootfs, installs NVIDIA 580-open drivers and other packages needed for gaming
-- Re-squashes the rootfs
+- Enables thunking for graphics libraries
 - Applies apparmor profiles for FEXBash and Steam
 - Patches the Steam launcher to launch with FEXBash on arm64
 
