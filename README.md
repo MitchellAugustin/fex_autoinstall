@@ -1,4 +1,4 @@
-# Automated installer for Steam & FEX on arm64
+# Automated installer for Steam & FEX on arm64 Ubuntu
 
 This does the following:
 - Installs FEX PPA and dependencies
@@ -8,6 +8,7 @@ This does the following:
 - Patches the Steam launcher to launch with FEXBash on arm64
 
 Note:
+- This is designed for Ubuntu 24.04 and may require modifications for use on other distros/releases
 - This is third-party software for experimental use. It is not supported by Canonical, Valve, NVIDIA, or the FEX developers. Use at your own risk.
 - Your x86 RootFS will not receive automatic updates.
 
