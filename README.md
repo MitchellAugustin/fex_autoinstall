@@ -1,7 +1,7 @@
 # Automated Steam & FEX installer for Ubuntu on arm64
 
 ## How to use
-`wget https://raw.githubusercontent.com/MitchellAugustin/fex_autoinstall/refs/heads/main/fex_autoinstall_poc.sh && bash fex_autoinstall_poc.sh`
+`wget https://raw.githubusercontent.com/esullivan-nvidia/fex_autoinstall/refs/heads/main/fex_autoinstall_poc.sh && bash fex_autoinstall_poc.sh`
 
 ## This does the following
 - Installs FEX PPA and dependencies
