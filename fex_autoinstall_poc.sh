@@ -86,7 +86,8 @@ runfile=$(realpath ./NVIDIA-Linux-x86_64-$nvidia_driver_version.run)
 runfilename=$(basename $runfile)
  
 sh $runfile -x # || return -1
- 
+
+pushd . >/dev/null
 cd ${runfilename%.run}
  
 # Copy NGX .dlls for DLSS support in Proton
@@ -128,8 +129,12 @@ ln -sf $dso $(echo $dso | cut -d'.' -f1-2).2
 popd >/dev/null
 done
 
-echo "Patching Steam launcher to automatically invoke with FEXBash on arm64..."
-sudo patch -p1 /usr/lib/steam/bin_steam.sh < patch_steam_for_arm64.patch
+popd >/dev/null
+
+if ! sudo patch --dry-run -R -p1 /usr/lib/steam/bin_steam.sh < patch_steam_for_arm64.patch &>/dev/null; then
+    echo "Patching Steam launcher to automatically invoke with FEXBash on arm64..."
+    sudo patch -p1 /usr/lib/steam/bin_steam.sh < patch_steam_for_arm64.patch
+fi
 
 echo "---"
 echo "Installation complete!"
