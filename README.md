@@ -20,4 +20,4 @@
 
 ## Troubleshooting
 - If you experience any future crashes in games that were initially playable, update your RootFS by using [FEXRootFSFetcher](https://wiki.fex-emu.com/index.php/Development:Setting_up_RootFS#Quick_Setup_with_FEXRootFSFetcher).
-- If Steam fails to launch with an "exec format error" or similar, ensure that [patch_steam_for_arm64.patch](https://github.com/MitchellAugustin/fex_autoinstall/blob/main/patch_steam_for_arm64.patch) has been correctly applied to your /usr/lib/steam/bin_steam.sh
+- If Steam fails to launch with an "exec format error", "You are missing the following 32-bit libraries, and Steam may not run: libc.so.6", or similar, ensure that [patch_steam_for_arm64.patch](https://github.com/MitchellAugustin/fex_autoinstall/blob/main/patch_steam_for_arm64.patch) has been correctly applied to your /usr/lib/steam/bin_steam.sh. (If the patch does not apply, you can launch with `FEXBash steam` instead.)
