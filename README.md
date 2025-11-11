@@ -2,8 +2,8 @@
 
 ## How to use
 - In desktop mode right click and select the "Open in Terminal" option.
-- If you have not already done so, run the following command on the new terminal window: `wget https://raw.githubusercontent.com/esullivan-nvidia/fex_autoinstall/refs/heads/main/fex_autoinstall_poc.sh && bash fex_autoinstall_poc.sh`
-- Once installation has completed and for all subsequent runs, Steam can be started by running `FEXBash steam` from the same terminal window.
+- If you have not already done so, run the following command on the new terminal window: `wget https://raw.githubusercontent.com/MitchellAugustin/fex_autoinstall/refs/heads/main/fex_autoinstall_poc.sh && bash fex_autoinstall_poc.sh`
+- Once installation has completed and for all subsequent runs, Steam can be started by running `steam` normally.
 
 ## This does the following
 - Installs FEX PPA and dependencies
