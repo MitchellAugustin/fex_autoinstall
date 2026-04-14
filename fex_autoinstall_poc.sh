@@ -48,12 +48,12 @@ sudo add-apt-repository -y ppa:fex-emu/fex
 sudo apt update
 
 echo "Installing FEX-Emu and Vulkan packages..."
-sudo apt install -y fex-emu-armv8.4 fex-emu-wine patchelf mesa-vulkan-drivers
+sudo apt install -y fex-emu-armv8.0 fex-emu-wine patchelf mesa-vulkan-drivers
 
 echo "Downloading required files..."
 wget https://repo.steampowered.com/steam/archive/stable/steam-launcher_latest_all.deb
-wget https://raw.githubusercontent.com/esullivan-nvidia/fex_autoinstall/refs/heads/main/patch_steam_for_arm64.patch
-wget https://raw.githubusercontent.com/esullivan-nvidia/fex_autoinstall/refs/heads/main/fex_config_with_thunking_enabled.json
+wget https://raw.githubusercontent.com/MitchellAugustin/fex_autoinstall/refs/heads/main/patch_steam_for_arm64.patch
+wget https://raw.githubusercontent.com/MitchellAugustin/fex_autoinstall/refs/heads/main/fex_config_with_thunking_enabled.json
 
 echo "Installing Steam from .deb..."
 sudo apt install -y ./steam-launcher_latest_all.deb
@@ -89,13 +89,25 @@ profile steam /usr/bin/steam flags=(unconfined) {
 }
 " > steam_apparmor.txt
 
+echo "abi <abi/4.0>,
+include <tunables/global>
+ 
+profile bwrap /{usr/,}/bin/bwrap flags=(unconfined) {
+  userns,
+ 
+  # Site-specific additions and overrides. See local/README for details.
+  include if exists <local/bwrap>
+}
+" > bwrap_apparmor.txt
 
 sudo mv steam_apparmor.txt /etc/apparmor.d/steam
 sudo mv FEXBash_apparmor.txt /etc/apparmor.d/FEXBash
+sudo mv bwrap_apparmor.txt /etc/apparmor.d/bwrap
 
 set +e
 sudo apparmor_parser -Tr /etc/apparmor.d/steam
 sudo apparmor_parser -Tr /etc/apparmor.d/FEXBash
+sudo apparmor_parser -Tr /etc/apparmor.d/bwrap
 set -e
 
 

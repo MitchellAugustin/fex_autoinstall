@@ -6,7 +6,7 @@
  
 +ARCH=$(arch)
 +
-+if [[ "$ARCH" == "aarch64" ]]; then
++if [[ "$HOSTTYPE" == "aarch64" ]]; then
 +  echo "System architecture is aarch64 (ARM64). Launching with FEXBash"
 +  FEXBash $0 "$@"
 +  exit
