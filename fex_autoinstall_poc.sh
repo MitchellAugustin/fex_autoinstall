@@ -52,8 +52,8 @@ sudo apt install -y fex-emu-armv8.4 fex-emu-wine patchelf mesa-vulkan-drivers
 
 echo "Downloading required files..."
 wget https://repo.steampowered.com/steam/archive/stable/steam-launcher_latest_all.deb
-wget https://raw.githubusercontent.com/esullivan-nvidia/fex_autoinstall/refs/heads/main/patch_steam_for_arm64.patch
-wget https://raw.githubusercontent.com/esullivan-nvidia/fex_autoinstall/refs/heads/main/fex_config_with_thunking_enabled.json
+wget https://raw.githubusercontent.com/MitchellAugustin/fex_autoinstall/refs/heads/main/patch_steam_for_arm64.patch
+wget https://raw.githubusercontent.com/MitchellAugustin/fex_autoinstall/refs/heads/main/fex_config_with_thunking_enabled.json
 
 echo "Installing Steam from .deb..."
 sudo apt install -y ./steam-launcher_latest_all.deb
