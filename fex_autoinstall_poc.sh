@@ -48,7 +48,7 @@ sudo add-apt-repository -y ppa:fex-emu/fex
 sudo apt update
 
 echo "Installing FEX-Emu and Vulkan packages..."
-sudo apt install -y fex-emu-armv8.4 fex-emu-wine patchelf mesa-vulkan-drivers
+sudo apt install -y fex-emu-armv8.0 fex-emu-wine patchelf mesa-vulkan-drivers
 
 echo "Downloading required files..."
 wget https://repo.steampowered.com/steam/archive/stable/steam-launcher_latest_all.deb
